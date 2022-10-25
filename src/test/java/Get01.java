@@ -48,11 +48,29 @@ Given
 
         //iii)Type code to send request(Talep göndermek icin kod yazimi
 
-        Response response =given().when().get(url);
+        Response response = given().when().get(url);
         response.prettyPrint();
 
         //iv)Do Assertion(dogrulama yapmak)
         response.then().assertThat().statusCode(200).contentType("application/json").statusLine("HTTP/1.1 200 OK");
+
+        //status code konsola yazdiralim
+        System.out.println("Status code: " + response.getStatusCode());
+
+        //ContentType konsola yazdiralim
+        System.out.println("Content type: " + response.getContentType());
+
+        //status line konsola yazdiralim
+        System.out.println("Status line: " + response.getStatusLine());
+
+        //Header konsola yazdiralim
+        System.out.println("Header: " + response.getHeader("Server"));
+
+        //Headers konsola yazdiralim
+        System.out.println("Headers: " + response.getHeaders());
+
+        //Time konsola yazdiralim
+        System.out.println("Time: " + response.getTime());
 
     }
 }
