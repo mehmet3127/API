@@ -1,3 +1,5 @@
+package get_request;
+
 import io.restassured.response.Response;
 import org.junit.Test;
 
@@ -38,10 +40,13 @@ public class Get02 {
 
         //iv)Do Assertion(dogrulama yapmak)
         response.then().assertThat().statusCode(404).statusLine("HTTP/1.1 404 Not Found");
+
         //body Not Found iceriyormu testi yapiliyor
         assertTrue(response.asString().contains("Not Found"));
+
         //body nin TechProEd icermedigi test yapiliyor
         assertFalse(response.asString().contains("TechProEd"));
+
         //body nin Cowboy olup olmadigini test ediyor
         assertEquals("Cowboy" , response.getHeader("Server"));
 
