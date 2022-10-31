@@ -45,7 +45,7 @@ public class Get07 extends JsonplaceholderBaseUrl {
         // 4. Do Assertion
 
         //  1)Status code is 200 == > Status kodu 200 olmali
-        response.then().assertThat().statusCode(200);
+        response.then().statusCode(200);
         assertEquals(200,response.getStatusCode());
 
         //2)Print all ids greater than 190 on the console ==> id si 190 dan buyuk olanlari konsola yazdirin
