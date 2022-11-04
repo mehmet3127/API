@@ -54,7 +54,10 @@ Given
         response.prettyPrint();
 
         //iv)Do Assertion(dogrulama yapmak)
-        response.then().assertThat().statusCode(200).contentType("application/json").statusLine("HTTP/1.1 200 OK");
+        response.then().assertThat().
+                statusCode(200).
+                contentType("application/json").
+                statusLine("HTTP/1.1 200 OK");
 
         //status code konsola yazdiralim
         System.out.println("Status code: " + response.getStatusCode());

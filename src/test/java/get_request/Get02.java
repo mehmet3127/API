@@ -48,7 +48,8 @@ public class Get02 {
         assertFalse(response.asString().contains("TechProEd"));
 
         //body nin Cowboy olup olmadigini test ediyor
-        assertEquals("Cowboy" , response.getHeader("Server"));
+        assertEquals("Cowboy", response.getHeader("Server"));
+
 
     }
 }
