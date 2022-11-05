@@ -22,4 +22,16 @@ public class JsonPlaceHolderTestData {
 
         return expectedDataMap;
     }
+    public String expectedDataInString(int userId,String title,boolean completed){ //Dinamik expected data Methodu Json data'yi String return ediyo
+
+        String expectedData ="{\n" +
+                "        \"userId\": "+userId+",\n" +
+                "        \"title\": \""+title+"\",\n" +
+                "        \"completed\": "+completed+"\n" +
+                "        }";
+
+        return expectedData;
+    }
+
+
 }
