@@ -102,11 +102,9 @@ public class Get06 extends RestfulBaseUrl {
         // softAssert class 3 adimda kullanilir
 
         // i) Obje olusturma
-
         SoftAssert softAssert=new SoftAssert();
 
         // ii) Do Assertion ( dogrulama Yapma)
-
         softAssert.assertEquals(json.getString("firstname"),"Bradley", "First Name Hatali");
         softAssert.assertEquals(json.getString("lastname"),"Pearson", "Last Name Hatali");
         softAssert.assertEquals(json.getInt("totalprice"),132,"Total Price Hatali");
@@ -114,13 +112,12 @@ public class Get06 extends RestfulBaseUrl {
         softAssert.assertEquals(json.getString("bookingdates.checkin"),"2022-10-27","Check In Tarihi Hatali");
         softAssert.assertEquals(json.getString("bookingdates.checkout"),"2022-11-07", "Check out Tarihi Hatali");
         softAssert.assertEquals(json.getString("additionalneeds"),"None", "Additionalneeds Hatali");
-        softAssert.assertAll();
 
         /* iii) Dogrulama islemleri sonunda softAssert.assertAll() diyerek yaptigimiz tum dogrulama islemlerinin kontrol edilmesini
          sagliyoruz.
          Eger islemin sonunda softAssert.assertAll() kullanmaz isek taleplerimiz hatalı bile olsa testimiz pass olacaktir.
-
          */
+        softAssert.assertAll();
 
 
     }

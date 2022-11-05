@@ -67,13 +67,14 @@ public class Get08 extends JsonplaceholderBaseUrl {
 
         Map<String, Object> actualData = response.as(HashMap.class);//De-Serialization
         System.out.println("actualData = " + actualData);
-        assertEquals(expectedData.get("userId"),actualData.get("userId"));
-        assertEquals(expectedData.get("id"),actualData.get("id"));
-        assertEquals(expectedData.get("title"),actualData.get("title"));
-        assertEquals(expectedData.get("completed"),actualData.get("completed"));
+
+        assertEquals(expectedData.get("userId"), actualData.get("userId"));
+        assertEquals(expectedData.get("id"), actualData.get("id"));
+        assertEquals(expectedData.get("title"), actualData.get("title"));
+        assertEquals(expectedData.get("completed"), actualData.get("completed"));
         assertEquals("1.1 vegur", response.header("Via"));
         assertEquals("cloudflare", response.header("Server"));
-        assertEquals(200,response.statusCode());
+        assertEquals(200, response.statusCode());
 
 
     }
@@ -88,7 +89,7 @@ public class Get08 extends JsonplaceholderBaseUrl {
 
         //Set the Expected Data ==>Payload
         JsonPlaceHolderTestData objJsonPlcHldr = new JsonPlaceHolderTestData();
-       Map<String,Object> expectedData =  objJsonPlcHldr.expectedDataMethod(1,"quis ut nam facilis et officia qui",false);
+        Map<String, Object> expectedData = objJsonPlcHldr.expectedDataMethod(1, "quis ut nam facilis et officia qui", false);
 
 
         //send tehe request and Get the Response
@@ -100,12 +101,13 @@ public class Get08 extends JsonplaceholderBaseUrl {
 
         Map<String, Object> actualData = response.as(HashMap.class);//De-Serialization
         System.out.println("actualData = " + actualData);
-        assertEquals(expectedData.get("userId"),actualData.get("userId"));
-        assertEquals(expectedData.get("title"),actualData.get("title"));
-        assertEquals(expectedData.get("completed"),actualData.get("completed"));
+
+        assertEquals(expectedData.get("userId"), actualData.get("userId"));
+        assertEquals(expectedData.get("title"), actualData.get("title"));
+        assertEquals(expectedData.get("completed"), actualData.get("completed"));
         assertEquals("1.1 vegur", response.header("Via"));
         assertEquals("cloudflare", response.header("Server"));
-        assertEquals(200,response.statusCode());
+        assertEquals(200, response.statusCode());
 
 
     }

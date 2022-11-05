@@ -7,8 +7,6 @@ public class JsonPlaceHolderTestData {
 
     public Map<String,Object> expectedDataMethod(Integer userId, String title, Boolean completed ){
 
-
-
         Map<String,Object> expectedDataMap = new HashMap<>();
 
         if(userId!=null){

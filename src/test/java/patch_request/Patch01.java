@@ -42,6 +42,7 @@ Then
         //set the expected Data
         JsonPlaceHolderTestData obj = new JsonPlaceHolderTestData();
         Map<String, Object> expectedData = obj.expectedDataMethod(null, "Wash the dishes", null);
+        System.out.println("expectedData = " + expectedData);
 
         //send the Request and Get the Response
         Response response = given().spec(spec).contentType(ContentType.JSON).body(expectedData).when().patch("/{first}/{second}");

@@ -50,7 +50,8 @@ public class Get10 extends GoRestBaseUrl {
         Map<String, String> dataKeyMap = obj.dataKeyMap("Navin Talwar", "navin_talwar@mclaughlin.name", "male", "inactive");
         //icerideki Map Data map
 
-        Map<String, Object> expectedData = obj.expectedDataMethod(null, dataKeyMap);//ikinciMap dis Map
+        Map<String, Object> expectedData = obj.expectedDataMethod(null, dataKeyMap);
+        //ikinciMap dis Map
         System.out.println("expectedData = " + expectedData);
 
         //send tehe request and Get the Response

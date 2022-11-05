@@ -65,7 +65,8 @@ public class Get09 extends RestfulBaseUrl {
 
         //Do assert
 
-        Map<String, Object> actualData = response.as(HashMap.class);
+        Map<String, Object> actualData = response.as(HashMap.class);//De-Serialization
+
         assertEquals(expectedData.get("firstname"), actualData.get("firstname"));
         assertEquals(expectedData.get("lastname"), actualData.get("lastname"));
         assertEquals(expectedData.get("totalprice"), actualData.get("totalprice"));
