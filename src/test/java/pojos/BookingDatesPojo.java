@@ -1,5 +1,8 @@
 package pojos;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class BookingDatesPojo {
 
     //1-Tum Key'ler icin private Variable'lar olusturduk
@@ -36,6 +39,7 @@ public class BookingDatesPojo {
     }
 
     public void setCheckout(String checkout) {
+
 
         this.checkout = checkout;
     }

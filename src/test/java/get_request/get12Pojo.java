@@ -21,8 +21,8 @@ public class get12Pojo extends RestfulBaseUrl {
 And
     Response body is like:
               {
-                "firstname": "Dane",
-                "lastname": "Combs",
+                "firstname": "Guoqiang",
+                "lastname": "Liu",
                 "totalprice": 111,
                 "depositpaid": true,
                 "bookingdates": {
@@ -38,12 +38,12 @@ And
 
 
         //set the url
-        spec.pathParams("first", "booking", "second", 18);
+        spec.pathParams("first", "booking", "second", 19);
 
         //set the expected Data
         BookingDatesPojo bookingDatesPojo = new BookingDatesPojo("2018-01-01", "2019-01-01");
 
-        BookingPojo expectedData = new BookingPojo("Dane", "Combs", 111, true, bookingDatesPojo, "Breakfast");
+        BookingPojo expectedData = new BookingPojo("Guoqiang", "Liu", 111, true, bookingDatesPojo, "Breakfast");
         System.out.println("expectedData.toString() = " + expectedData.toString());
 
         //send the request and the response
@@ -61,11 +61,11 @@ And
         assertEquals(expectedData.getAdditionalneeds(), actualData.getAdditionalneeds());
 
         //1.Yol
-        assertEquals(expectedData.getBookingdates().getCheckin(), actualData.getBookingdates().getCheckout());
+        assertEquals(expectedData.getBookingdates().getCheckin(), actualData.getBookingdates().getCheckin());
         assertEquals(expectedData.getBookingdates().getCheckout(), actualData.getBookingdates().getCheckout());
 
-        //2.Yol
-        assertEquals(bookingDatesPojo.getCheckin(), actualData.getBookingdates().getCheckout());
+        //2.Yol ===>tavsiye edilen
+        assertEquals(bookingDatesPojo.getCheckin(), actualData.getBookingdates().getCheckin());
         assertEquals(bookingDatesPojo.getCheckout(), actualData.getBookingdates().getCheckout());
 
 
