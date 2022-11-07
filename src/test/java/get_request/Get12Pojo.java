@@ -9,7 +9,7 @@ import pojos.BookingPojo;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class get12Pojo extends RestfulBaseUrl {
+public class Get12Pojo extends RestfulBaseUrl {
 
     /*
      Given
@@ -43,7 +43,7 @@ And
         //set the expected Data
         BookingDatesPojo bookingDatesPojo = new BookingDatesPojo("2018-01-01", "2019-01-01");
 
-        BookingPojo expectedData = new BookingPojo("Guoqiang", "Liu", 111, true, bookingDatesPojo, "Breakfast");
+        BookingPojo expectedData = new BookingPojo("James", "Brown", 111, true, bookingDatesPojo, "Breakfast");
         System.out.println("expectedData.toString() = " + expectedData.toString());
 
         //send the request and the response

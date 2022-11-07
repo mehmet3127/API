@@ -27,6 +27,7 @@ public class GoRestDataPojo {
     }
 
     public void setId(Integer id) {
+
         this.id = id;
     }
 
@@ -35,6 +36,7 @@ public class GoRestDataPojo {
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 
@@ -43,27 +45,33 @@ public class GoRestDataPojo {
     }
 
     public void setEmail(String email) {
+
         this.email = email;
     }
 
     public String getGender() {
+
         return gender;
     }
 
     public void setGender(String gender) {
+
         this.gender = gender;
     }
 
     public String getStatus() {
+
         return status;
     }
 
     public void setStatus(String status) {
+
         this.status = status;
     }
 
     @Override
     public String toString() {
+
         return "GoRestDataPojo{" +
                 "id=" + id +
                 ", name='" + name + '\'' +

@@ -9,7 +9,7 @@ import pojos.GoRestPojo;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class get13Pojo extends GoRestBaseUrl {
+public class Get13Pojo extends GoRestBaseUrl {
 
             /*
         Given
@@ -53,7 +53,7 @@ public class get13Pojo extends GoRestBaseUrl {
         GoRestPojo actualData = response.as(GoRestPojo.class);
 
         assertEquals(expectedData.getMeta(), actualData.getMeta());
-        //1.yoll inner data
+        //1.Yol inner data
         assertEquals(expectedData.getData().getId(), actualData.getData().getId());
         assertEquals(expectedData.getData().getName(), actualData.getData().getName());
         assertEquals(expectedData.getData().getEmail(), actualData.getData().getEmail());
