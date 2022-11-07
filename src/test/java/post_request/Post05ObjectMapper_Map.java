@@ -37,7 +37,7 @@ public class Post05ObjectMapper_Map extends JsonplaceholderBaseUrl {
  */
 
     @Test
-    public void post05() throws IOException {
+    public void post05ObjectMapper() throws IOException {
         //set the url
         spec.pathParam("first", "todos");
 
@@ -49,6 +49,7 @@ public class Post05ObjectMapper_Map extends JsonplaceholderBaseUrl {
                 "\"completed\": false,\n" +
                 "\"id\": 201\n" +
                 "}";*/
+        //Set the Expected Data
         JsonPlaceHolderTestData obj = new JsonPlaceHolderTestData();
         String jsonInString = obj.expectedDataInString(55,"Tidy your room",false);
 
@@ -58,9 +59,12 @@ public class Post05ObjectMapper_Map extends JsonplaceholderBaseUrl {
         //send the request and get the response
         Response response = given().spec(spec).contentType(ContentType.JSON).body(expectedData).when().post("/{first}");
         response.prettyPrint();
+        //System.out.println("response.asString() = " + response.asString());
+        // response'i JSON formatinda degil de String olarak yazdirir
 
         //Do Assertion
         HashMap actualData = new ObjectMapper().readValue(response.asString(), HashMap.class);
+        System.out.println("actualData = " + actualData);
 
         assertEquals(201,response.getStatusCode());
         assertEquals(expectedData.get("completed"),actualData.get("completed"));
