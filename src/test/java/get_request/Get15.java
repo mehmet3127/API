@@ -3,6 +3,7 @@ package get_request;
 import base_Url.RestfulBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
+import org.testng.asserts.SoftAssert;
 import pojos.BookingDatesPojo;
 import pojos.BookingPojo;
 import utils.ObjectMapperUtils;
@@ -60,9 +61,13 @@ public class Get15 extends RestfulBaseUrl {
         assertEquals(bookingDatesPojo.getCheckin(), actualData.getBookingdates().getCheckin());
         assertEquals(bookingDatesPojo.getCheckout(), actualData.getBookingdates().getCheckout());*/
 
-        //2.YOL ObjeMapper
+
+
+
+        //2.YOL ObjeMapper Hard Assertion
 
         BookingPojo actualData = ObjectMapperUtils.convertJsonToJava(response.asString(), BookingPojo.class);
+
         assertEquals(200,response.getStatusCode());
         assertEquals(expectedData.getFirstname(), actualData.getFirstname());
         assertEquals(expectedData.getLastname(), actualData.getLastname());
@@ -71,6 +76,24 @@ public class Get15 extends RestfulBaseUrl {
         assertEquals(expectedData.getAdditionalneeds(), actualData.getAdditionalneeds());
         assertEquals(bookingDatesPojo.getCheckin(), actualData.getBookingdates().getCheckin());
         assertEquals(bookingDatesPojo.getCheckout(), actualData.getBookingdates().getCheckout());
+
+        //Soft Assertion
+        //1. Adım: SoftAssert Objesi Oluştur
+        SoftAssert softAssert = new SoftAssert();
+
+        //2. Adım: Assertion Yap
+        softAssert.assertEquals(actualData.getFirstname(), expectedData.getFirstname(), "Firstname uyusmadi");
+        softAssert.assertEquals(actualData.getLastname(), expectedData.getLastname(), "Lastname uyusmadi");
+        softAssert.assertEquals(actualData.getTotalprice(), expectedData.getTotalprice(), "totalprice uyusmadi");
+        softAssert.assertEquals(actualData.getDepositpaid(), expectedData.getDepositpaid(), "depositpaid uyusmadi");
+        softAssert.assertEquals(actualData.getAdditionalneeds(), expectedData.getAdditionalneeds(), "additionalneeds uyusmadi");
+
+        softAssert.assertEquals(actualData.getBookingdates().getCheckin(), bookingDatesPojo.getCheckin(), "checkin uyusmadi");
+        softAssert.assertEquals(actualData.getBookingdates().getCheckout(), bookingDatesPojo.getCheckout(), "checkout uyusmadi");
+
+        //3. Adım: assertAll() methodunu kullan
+        softAssert.assertAll();
+
 
     }
 }
