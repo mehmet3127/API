@@ -47,7 +47,7 @@ public class Odev02_PostMap extends ReqresBaseUrl {
 
         //Set the Expected Data
         ReqresTestData obj = new ReqresTestData();
-        Map<String, String> expectedData = obj.reqresTestData("morpheus", "leader");
+        Map<String, String> expectedData = obj.reqresTestDataMethod("morpheus", "leader");
         System.out.println("expectedData = " + expectedData);
 
         //send tehe request and Get the Response

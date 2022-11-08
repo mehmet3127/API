@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class ReqresTestData {
     
-  public  Map<String,String> reqresTestData(String name,String job){
+  public  Map<String,String> reqresTestDataMethod(String name, String job){
 
       Map<String,String> expectedData =new HashMap<>();
 
