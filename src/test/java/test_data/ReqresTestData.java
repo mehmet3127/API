@@ -5,12 +5,17 @@ import java.util.Map;
 
 public class ReqresTestData {
     
-  public  Map<String,String> reqresTestDataMethod(String name, String job){
+  public  Map<String,Object> reqresTestDataMethod(String name, Object job){
 
-      Map<String,String> expectedData =new HashMap<>();
+      Map<String,Object> expectedData =new HashMap<>();
 
-      expectedData.put("name",name);
-      expectedData.put("job",job);
+      if (name!=null){
+          expectedData.put("name",name);
+      }
+
+      if (job!=null){
+          expectedData.put("job",job);
+      }
 
 
       return expectedData;

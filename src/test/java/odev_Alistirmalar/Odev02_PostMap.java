@@ -47,7 +47,7 @@ public class Odev02_PostMap extends ReqresBaseUrl {
 
         //Set the Expected Data
         ReqresTestData obj = new ReqresTestData();
-        Map<String, String> expectedData = obj.reqresTestDataMethod("morpheus", "leader");
+        Map<String, Object> expectedData = obj.reqresTestDataMethod("morpheus", "leader");
         System.out.println("expectedData = " + expectedData);
 
         //send tehe request and Get the Response
@@ -55,7 +55,7 @@ public class Odev02_PostMap extends ReqresBaseUrl {
         response.prettyPrint();
 
         //Do assert
-        Map<String,String> actualData = response.as(Map.class);
+        Map<String,Object> actualData = response.as(Map.class);
         System.out.println("actualData = " + actualData);
 
         assertEquals(expectedData.get("name"), actualData.get("name"));
