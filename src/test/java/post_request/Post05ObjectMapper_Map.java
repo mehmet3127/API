@@ -6,6 +6,7 @@ import io.restassured.response.Response;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.junit.Test;
 import test_data.JsonPlaceHolderTestData;
+import utils.ObjectMapperUtils;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -70,6 +71,8 @@ public class Post05ObjectMapper_Map extends JsonplaceholderBaseUrl {
         assertEquals(expectedData.get("completed"),actualData.get("completed"));
         assertEquals(expectedData.get("title"),actualData.get("title"));
         assertEquals(expectedData.get("userId"),actualData.get("userId"));
+
+        System.out.println("(ObjectMapperUtils.convertJsonToJava(\"15\",Integer.class)+45) = " + (ObjectMapperUtils.convertJsonToJava("15", Integer.class) + 45));
 
     }
 }
