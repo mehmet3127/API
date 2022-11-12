@@ -34,6 +34,9 @@ public class Get16 extends DummyRestApiBaseUrl {
         Response response = given().spec(spec).when().get("/{first}");
         response.prettyPrint();
 
+        //i) Status code is 200
+        response.then().statusCode(200);
+
         //ii) There are 24 employee,iii) "Tiger Nixon" and "Garrett Winters" are among the employees
         response.then().assertThat().body("data", hasSize(24),
                 "data.employee_name", hasItems("Tiger Nixon", "Garrett Winters"));
